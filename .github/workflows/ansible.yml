@@ -49,7 +49,7 @@ jobs:
             --extra-vars "node_type=${{ github.event.inputs.NODE_TYPE }}"
 
       - name: Upload ServerInfo output to Github artifacts
-        if: ${{ github.event.inputs.MODULE }} == ServerInfo
+        if: ${{ github.event.inputs.MODULE == 'ServerInfo' }}
         uses: actions/upload-artifact@v3
         with:
             name: ServerInfo
