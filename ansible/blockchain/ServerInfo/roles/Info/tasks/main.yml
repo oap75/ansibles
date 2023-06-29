@@ -98,15 +98,15 @@
 - name: Save System Information to File
   copy:
     content: "{{ server_info.msg }}"
-    dest: /tmp/file.txt
+    dest: /tmp/info.txt
 
 - name: Fetch file.txt from remote server
   fetch:
-    src: /tmp/file.txt
-    dest: roles/Info/files/file.txt
+    src: /tmp/info.txt
+    dest: roles/Info/files/info.txt
     flat: yes
 
 - name: Remove file from remote server
   file:
-    path: /tmp/file.txt
+    path: /tmp/info.txt
     state: absent

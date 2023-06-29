@@ -48,9 +48,9 @@ jobs:
             --verbose
             --extra-vars "node_type=${{ github.event.inputs.NODE_TYPE }}"
 
-      - name: Upload debian packages to Github artifacts
+      - name: Upload ServerInfo output to Github artifacts
         if: ${{ github.event.inputs.MODULE }} == ServerInfo
         uses: actions/upload-artifact@v3
         with:
-            name: info.txt
-            path: ./ansible/blockchain/ServerInfo/roles/Info/files/file.txt
+            name: ServerInfo
+            path: ./ansible/blockchain/ServerInfo/roles/Info/files/info.txt
