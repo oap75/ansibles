@@ -18,6 +18,11 @@
   set_fact:
     is_archive: "{{ '--pruning=archive' if node_type == 'archive' else '' }}"
 
+- name: Echo my_env_var
+  shell: "echo $IS_ARCHIVE"
+  environment:
+    IS_ARCHIVE: "{{ is_archive }}"
+
 - name: Start the corresponding parachain full node service
   command: docker-compose -f /root/parachain/compose-files/full-node.yml up -d
   environment:
