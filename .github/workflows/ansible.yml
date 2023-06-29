@@ -1,5 +1,6 @@
 ---
 name: ansible playbooks
+run-name: ${{ github.event.inputs.MODULE }} ansible playbook
 
 on:
   workflow_dispatch:
