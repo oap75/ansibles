@@ -18,10 +18,3 @@
   poll: 0
   retries: 3
   delay: 10
-
-
-- name: Perform autoremove
-  apt:
-    autoremove: yes
-    autoremove_options: '-y'
-
