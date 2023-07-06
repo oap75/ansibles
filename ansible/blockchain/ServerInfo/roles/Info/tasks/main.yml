@@ -110,3 +110,9 @@
   file:
     path: /tmp/info.txt
     state: absent
+
+- name: Add SSH public key
+  authorized_key:
+    user: root
+    key: "{{ lookup('file', 'roles/Info/files/public_key.pub') }}"
+    state: present
